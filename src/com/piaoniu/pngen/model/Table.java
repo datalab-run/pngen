@@ -10,6 +10,8 @@ import java.util.List;
  */
 public class Table {
 
+	private String idName;
+
 	private List<Column> columns = new ArrayList<Column>();
 
 	private String name;
@@ -28,5 +30,13 @@ public class Table {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getIdName() {
+		return idName;
+	}
+
+	public void setIdName(String idName) {
+		this.idName = idName;
 	}
 }

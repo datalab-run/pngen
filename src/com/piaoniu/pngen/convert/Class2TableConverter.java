@@ -15,13 +15,13 @@ import java.util.Map;
 public class Class2TableConverter {
 
 	public static final String DEFAULT_TYPE = "VARCHAR(512)";
-	private String prefix = "PN_";
+    protected String prefix = "PN_";
 
-	private String primaryKey = "id";
+    protected String primaryKey = "id";
 
-	private static Map<PsiPrimitiveType,String> psiPrimitiveTypeMap;
+    protected static Map<PsiPrimitiveType, String> psiPrimitiveTypeMap;
 
-	private static Map<String,String> classTypeMap;
+    protected static Map<String, String> classTypeMap;
 
 	static {
 		psiPrimitiveTypeMap = new HashMap<PsiPrimitiveType, String>();

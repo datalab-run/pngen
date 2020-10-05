@@ -1,9 +1,9 @@
 CREATE TABLE `${table.name}` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
+##`id` int(11) NOT NULL AUTO_INCREMENT,
 #foreach( $column in $table.columns )
-`${column.name}` ${column.type} NOT NULL #if($column.comment)COMMENT '$column.comment'#end,
+`${column.name}`#if($column.columnDefinition) $column.columnDefinition#else ${column.type}#if($column.nullable == false) NOT NULL#end#if($column.unique == true) UNIQUE#end#end#if($column.comment) COMMENT '$column.comment'#end,
 #end
-`addTime` timestamp NOT NULL DEFAULT '2015-09-15 00:00:00',
-`updateTime` timestamp NOT NULL DEFAULT '2015-09-15 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+##    `addTime` timestamp NOT NULL DEFAULT '2015-09-15 00:00:00',
+##    `updateTime` timestamp NOT NULL DEFAULT '2015-09-15 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+PRIMARY KEY (`${table.idName}`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

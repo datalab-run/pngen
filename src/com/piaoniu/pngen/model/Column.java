@@ -13,6 +13,12 @@ public class Column {
 
 	private String comment;
 
+	private Boolean nullable = true;
+
+	private Boolean unique = false;
+
+	private String columnDefinition;
+
 	public String getType() {
 		return type;
 	}
@@ -35,5 +41,29 @@ public class Column {
 
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+
+	public Boolean getNullable() {
+		return nullable;
+	}
+
+	public void setNullable(Boolean nullable) {
+		this.nullable = nullable;
+	}
+
+	public Boolean getUnique() {
+		return unique;
+	}
+
+	public void setUnique(Boolean unique) {
+		this.unique = unique;
+	}
+
+	public String getColumnDefinition() {
+		return columnDefinition;
+	}
+
+	public void setColumnDefinition(String columnDefinition) {
+		this.columnDefinition = columnDefinition;
 	}
 }

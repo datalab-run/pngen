@@ -6,6 +6,7 @@ import com.intellij.openapi.actionSystem.DataKeys;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
 import com.piaoniu.pngen.convert.Class2TableConverter;
+import com.piaoniu.pngen.convert.JpaClass2TableConverter;
 import com.piaoniu.pngen.convert.SqlGenerator;
 import com.piaoniu.pngen.model.Table;
 
@@ -24,7 +25,7 @@ import static com.piaoniu.pngen.utils.LogUtils.showInfo;
  */
 public class CreateTableGenerateAction extends AnAction{
 
-	private Class2TableConverter class2TableConverter = new Class2TableConverter();
+	private Class2TableConverter class2TableConverter = new JpaClass2TableConverter();
 	private SqlGenerator sqlGenerator = new SqlGenerator();
 
 	public void actionPerformed(AnActionEvent e) {
